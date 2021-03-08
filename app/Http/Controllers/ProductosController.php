@@ -21,6 +21,8 @@ class ProductosController extends Controller
         return view('productos.index', ['productos' => $model->paginate(15)]);
     }
 
+    
+
     /**
      * Show the form for creating a new resource.
      *

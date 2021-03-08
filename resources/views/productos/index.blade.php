@@ -58,7 +58,7 @@
                                             <td>{{ $producto->description }}</td>
                                             <td>{{ $producto->cantidad }}</td>
                                             <td>{{ $producto->precio }}</td>
-                                            <td>{{ $producto->user->name}}</td>
+                                             <td>{{ $producto->user->name}}</td>
                                             <td class="d-flex justify-content-end">
                                                 @if ($producto->id_user != auth()->id() && $producto->cantidad>0) 
                                                 <a href="{{ route('productos.venta', $producto->id) }}" class="btn btn-link btn-warning edit d-inline-block"><i class="fa fa-edit"></i>Comprar</a>                                                

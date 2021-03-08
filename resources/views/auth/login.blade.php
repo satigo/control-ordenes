@@ -9,15 +9,15 @@
                         @csrf
                         <div class="card card-login card-hidden">
                             <div class="card-header ">
-                                <h3 class="header text-center">{{ __('Login') }}</h3>
+                                <h3 class="header text-center">{{ __('Iniciar Sesion') }}</h3>
                             </div>
                             <div class="card-body ">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="email" class="col-md-6 col-form-label">{{ __('E-Mail Address') }}</label>
+                                        <label for="email" class="col-md-6 col-form-label">{{ __('E-mail: ') }}</label>
             
                                         <div class="col-md-14">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', 'admin@lightbp.com') }}" required autocomplete="email" autofocus>
+                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', '') }}" required autocomplete="email" autofocus>
             
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -26,10 +26,10 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label for="password" class="col-md-6 col-form-label">{{ __('Password') }}</label>
+                                            <label for="password" class="col-md-6 col-form-label">{{ __('Contraseña') }}</label>
                 
                                             <div class="col-md-14">
-                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password', 'secret') }}" required autocomplete="current-password">
+                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password', '') }}" required autocomplete="current-password">
                 
                                                 @error('password')
                                                     <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                                                 <label class="form-check-label d-flex align-items-center">
                                                     <input class="form-check-input" type="checkbox" name="remember"  id="remember">
                                                     <span class="form-check-sign"></span>
-                                                    {{ __('Remember me') }}
+                                                    {{ __('Recordarme') }}
                                                 </label>
                                             </div>
                                         </div>
@@ -51,14 +51,12 @@
                                 </div>
                                 <div class="card-footer ml-auto mr-auto">
                                     <div class="container text-center" >
-                                        <button type="submit" class="btn btn-warning btn-wd">{{ __('Login') }}</button>
+                                        <button type="submit" class="btn btn-warning btn-wd">{{ __('Iniciar Sesion') }}</button>
                                     </div>
                                     <div class="d-flex justify-content-between">
-                                        <a class="btn btn-link"  style="color:#23CCEF" href="{{ route('password.request') }}">
-                                        {{ __('Forgot password?') }}
-                                        </a>
+                                        
                                         <a class="btn btn-link" style="color:#23CCEF" href="{{ route('register') }}">
-                                            {{ __('Create account') }}
+                                            {{ __('Crear Cuenta de Vendedor') }}
                                         </a>
                                     </div>
                                     

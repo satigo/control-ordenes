@@ -17,12 +17,12 @@
                 </li>
                 <li class="nav-item @if($activePage == 'register') active @endif">
                     <a href="{{ route('register') }}" class="nav-link">
-                        <i class="nc-icon nc-badge"></i> {{ __('Register') }}
+                        <i class="nc-icon nc-badge"></i> {{ __('Registrarse') }}
                     </a>
                 </li>
                 <li class="nav-item @if($activePage == 'login') active @endif">
                     <a href="{{ route('login') }}" class="nav-link">
-                        <i class="nc-icon nc-mobile"></i> {{ __('Login') }}
+                        <i class="nc-icon nc-mobile"></i> {{ __('Iniciar Sesion') }}
                     </a>
                 </li>
             </ul>

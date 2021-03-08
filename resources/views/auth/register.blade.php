@@ -15,8 +15,8 @@
                                         </div>
                                     </div>
                                     <div class="media-body">
-                                        <h4>{{ __('Free Account') }}</h4>
-                                        <p>{{ __('Here you can write a feature description for your dashboard, let the users know what is the value that you give them.') }}</p>
+                                        <h4>{{ __('Usario sin Registrarse') }}</h4>
+                                        <p>{{ __('Usuario que solamente puede ver y comprar productos del catalogo que se tiene') }}</p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -26,21 +26,11 @@
                                         </div>
                                     </div>
                                     <div class="media-body">
-                                        <h4>{{ __('Awesome Performances') }}</h4>
-                                        <p>{{ __('Here you can write a feature description for your dashboard, let the users know what is the value that you give them.') }}</p>
+                                        <h4>{{ __('Usuario Registrado') }}</h4>
+                                        <p>{{ __('Este es el usuario de vendedor, el cual puede subir nuevos productos, editar sus propios productos y comprar productos de otros vendedores') }}</p>
                                     </div>
                                 </div>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <div class="icon">
-                                            <i class="nc-icon nc-planet"></i>
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>{{ __('Global Support') }}</h4>
-                                        <p>{{ __('Here you can write a feature description for your dashboard, let the users know what is the value that you give them.') }}</p>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="col-md-4 mr-auto">
                                 <form method="POST" action="{{ route('register') }}">
@@ -48,25 +38,25 @@
                                     <div class="card card-plain">
                                         <div class="content">
                                             <div class="form-group">
-                                                <input type="text" name="name" id="name" class="form-control" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                                                <input type="text" name="name" id="name" class="form-control" placeholder="{{ __('Nombre Vendedor') }}" value="{{ old('name') }}" required autofocus>
                                             </div>
 
                                             <div class="form-group">   {{-- is-invalid make border red --}}
-                                                <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter email" class="form-control" required>
+                                                <input type="email" name="email" value="{{ old('email') }}" placeholder="Escriba su correo" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <input type="password" name="password" class="form-control" required >
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="password_confirmation" placeholder="Password Confirmation" class="form-control" required autofocus>
+                                                <input type="password" name="password_confirmation" placeholder="Confirme contraseña" class="form-control" required autofocus>
                                             </div>
                                             <div class="form-group d-flex justify-content-center">
                                                 <div class="form-check rounded col-md-10 text-left">
                                                     <label class="form-check-label text-white d-flex align-items-center">
                                                         <input class="form-check-input" name="agree" type="checkbox" required >
                                                         <span class="form-check-sign"></span>
-                                                        <b>{{ __('Agree with terms and conditions') }}</b>
+                                                        <b>{{ __('Confirmo datos ingresados') }}</b>
                                                     </label>
                                                 </div>
                                             </div>

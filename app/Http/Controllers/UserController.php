@@ -24,4 +24,8 @@ class UserController extends Controller
         $users=Libro::find($id);
         return  view('user.show',compact('users'));
     }
+
+    
+
+
 }
