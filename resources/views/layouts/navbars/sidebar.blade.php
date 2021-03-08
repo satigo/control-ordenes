@@ -48,6 +48,13 @@ Tip 2: you can also add an image using data-image tag
                                 <p>{{ __("Administrar Productos") }}</p>
                             </a>
                         </li>
+
+                        <li class="nav-item @if($activePage == 'venta-management') active @endif">
+                            <a class="nav-link" href="{{route('ventas.index')}}">
+                                <i class="nc-icon nc-circle-09"></i>
+                                <p>{{ __("Ver Ventas") }}</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>

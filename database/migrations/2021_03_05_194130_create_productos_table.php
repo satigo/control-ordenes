@@ -14,14 +14,23 @@ class CreateProductosTable extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
             $table->string('description');
             $table->integer('cantidad');
             $table->decimal('precio');
-
+            $table->integer('id_user')->unsigned()->nullable();
             $table->timestamps();
+            
+            $table->foreign('id_user')
+                  ->references('id')->on('users')
+                  ->onDelete('cascade');
+            
         });
+    }
+
+    public function ventas() {
+        return $this->belongsToMany('App\Models\Venta');
     }
 
     /**

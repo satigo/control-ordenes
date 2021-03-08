@@ -49,6 +49,10 @@
                                         @include('alerts.feedback', ['field' => 'precio'])
                                     </div>                                 
                                     
+                                    <div class="form-group{{ $errors->has('id_user') ? ' has-danger' : '' }}">
+                                        <input type="hidden" name="id_user" id="input-id_user" class="form-control{{ $errors->has('id_user') ? ' is-invalid' : '' }}"  value="{{auth()->id()}}">
+                                        @include('alerts.feedback', ['field' => 'precio'])
+                                    </div> 
                                     
 
                                     <div class="text-center">

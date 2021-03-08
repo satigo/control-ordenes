@@ -32,6 +32,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::patch('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 	//Route::resource("productos", "ProductosController")->parameters(["productos"=>"producto"]);
 	Route::resource('productos', 'App\Http\Controllers\ProductosController', ['except' => ['show']]);
+	Route::resource('ventas', 'App\Http\Controllers\VentasController', ['except' => ['show']]);
+	Route::get('/productos/venta/{id}', ['as' => 'productos.venta', 'uses' => 'App\Http\Controllers\ProductosController@venta']);
+	
+		
+
+	
 });
 
 Route::group(['middleware' => 'auth'], function () {

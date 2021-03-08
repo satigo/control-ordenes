@@ -70,6 +70,19 @@ class ProductosController extends Controller
         return view('productos.edit', compact('producto'));
     }
 
+  /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Producto  $producto
+     * @return \Illuminate\Http\Response
+     */
+    public function venta(Request $request)
+    {
+        $producto=Producto::find($request->id);
+        //LLamamos a la vista de Venta.
+        return view('productos.venta', compact('producto'));
+    }
+
     /**
      * Update the specified resource in storage.
      *

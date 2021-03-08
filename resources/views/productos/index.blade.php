@@ -37,6 +37,7 @@
                                     <th>{{ __('Descripcion') }}</th>
                                     <th>{{ __('Cantidad') }}</th>
                                     <th>{{ __('Precio') }}</th>
+                                    <th>{{ __('Vendedor') }}</th>
                                 </thead>
                                 <tfoot>
                                     <tr>
@@ -45,6 +46,7 @@
                                     <th>{{ __('Descripcion') }}</th>
                                     <th>{{ __('Cantidad') }}</th>
                                     <th>{{ __('Precio') }}</th>
+                                    <th>{{ __('Vendedor') }}</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -56,15 +58,23 @@
                                             <td>{{ $producto->description }}</td>
                                             <td>{{ $producto->cantidad }}</td>
                                             <td>{{ $producto->precio }}</td>
+                                            <td>{{ $producto->user->name}}</td>
                                             <td class="d-flex justify-content-end">
+                                                @if ($producto->id_user != auth()->id() && $producto->cantidad>0) 
+                                                <a href="{{ route('productos.venta', $producto->id) }}" class="btn btn-link btn-warning edit d-inline-block"><i class="fa fa-edit"></i>Comprar</a>                                                
                                                 
-                                                    <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-link btn-warning edit d-inline-block"><i class="fa fa-edit"></i></a>
-
+                                                   <!--  <a href="{{ route('ventas.create', $producto->id) }}" class="btn btn-link btn-warning edit d-inline-block"><i class="fa fa-edit"></i>Comprar</a> -->
+                                                @endif
+                                                @if ($producto->id_user == auth()->id())     
+                                                    <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-link btn-warning edit d-inline-block"><i class="fa fa-edit"></i>Editar</a>
+                                                @endif
                                                     <form class="d-inline-block" action="{{ route('productos.destroy', $producto->id) }}" method="POST">
                                                         @method('delete')
                                                         @csrf
                                                         <a class="btn btn-link btn-danger " onclick="confirm('{{ __('Realmente deseas eliminar el producto?') }}') ? this.parentElement.submit() : ''"s><i class="fa fa-times"></i></a>
-                                                    </form>                                                
+                                                    </form>
+                                                    
+                                                                                                    
                                                 
                                             </td>
                                         </tr>
