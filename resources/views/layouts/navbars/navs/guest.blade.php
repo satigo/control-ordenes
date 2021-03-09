@@ -11,6 +11,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                
+                <form class="form" method="POST" action="{{ route('login') }}">
+                @csrf
+                <div><input id="email" type="hidden" class="form-control @error('email') is-invalid @enderror" name="email" value="satigo@outlook.com" required autocomplete="email" autofocus></div>
+                <div><input id="password" type="hidden" class="form-control @error('email') is-invalid @enderror" name="password" value="dark678angel" required autocomplete="password" autofocus></div>
+                <div><button type="submit" class="btn btn-warning btn-wd">{{ __('Invitado') }}</button></div>
+                </form>
                     <a href="{{ route('dashboard') }}" class="nav-link">
                         <i class="nc-icon nc-chart-pie-35"></i> {{ __('Dashboard') }}
                     </a>
