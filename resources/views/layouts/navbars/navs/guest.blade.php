@@ -14,8 +14,8 @@
                 
                 <form class="form" method="POST" action="{{ route('login') }}">
                 @csrf
-                <div><input id="email" type="hidden" class="form-control @error('email') is-invalid @enderror" name="email" value="satigo@outlook.com" required autocomplete="email" autofocus></div>
-                <div><input id="password" type="hidden" class="form-control @error('email') is-invalid @enderror" name="password" value="dark678angel" required autocomplete="password" autofocus></div>
+                <div><input id="email" type="hidden" class="form-control @error('email') is-invalid @enderror" name="email" value="guest@gmail.com" required autocomplete="email" autofocus></div>
+                <div><input id="password" type="hidden" class="form-control @error('email') is-invalid @enderror" name="password" value="guest" required autocomplete="password" autofocus></div>
                 <div><button type="submit" class="btn btn-warning btn-wd">{{ __('Invitado') }}</button></div>
                 </form>
                     <a href="{{ route('dashboard') }}" class="nav-link">

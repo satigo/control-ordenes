@@ -16,7 +16,9 @@
                                     </p>
                                 </div>
                                 <div class="col-4 text-right">
+                                @if (auth()->id()!='1')
                                     <a href="{{ route('productos.create') }}" class="btn btn-sm btn-default">{{ __('Nuevo Producto') }}</a>
+                                @endif
                                 </div>
                             </div>
                         </div>
@@ -60,7 +62,7 @@
                                             <td>{{ $producto->precio }}</td>
                                              <td>{{ $producto->user->name}}</td>
                                             <td class="d-flex justify-content-end">
-                                                @if ($producto->id_user != auth()->id() && $producto->cantidad>0) 
+                                                @if (($producto->id_user != auth()->id() || auth()->id()=='1') && $producto->cantidad>0) 
                                                 <a href="{{ route('productos.venta', $producto->id) }}" class="btn btn-link btn-warning edit d-inline-block"><i class="fa fa-edit"></i>Comprar</a>                                                
                                                 
                                                    <!--  <a href="{{ route('ventas.create', $producto->id) }}" class="btn btn-link btn-warning edit d-inline-block"><i class="fa fa-edit"></i>Comprar</a> -->

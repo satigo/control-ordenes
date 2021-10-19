@@ -50,7 +50,7 @@
                                         <tr>
                                             <td>{{ $venta->id }}</td>
                                             <td>{{ $venta->total }}</td>
-                                            <td>{{ $venta->id_user }}</td>
+                                            <td>{{ $venta->user->name }}</td>
                                             <td>{{ $venta->created_at }}</td>                                            
                                         </tr>
                                     @endforeach
